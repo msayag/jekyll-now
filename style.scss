@@ -279,6 +279,41 @@ nav {
   background-color: $lightGray;
 }
 
+aside {
+  float: left;
+  width: 200px;
+  position: sticky;
+  top: 0;
+}
+
+aside nav {
+  float: left;
+  width: 200px;
+  background-color: #f1f1f1;
+}
+
+aside nav ul {
+  list-style-type: none;
+  padding-left: 5px;
+}
+
+aside nav ul a {
+  margin-left: 5px;
+}
+
+aside nav li {
+  border-bottom: solid;
+  color: white;
+}
+
+aside nav li:hover {
+  background-color: #555;
+}
+
+aside nav a:hover {
+  color: white;
+}
+
 footer {
   padding: 20px 0;
   text-align: center;
