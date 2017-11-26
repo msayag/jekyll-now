@@ -39,8 +39,15 @@
             {% include toc.html html=content sanitize=true class="side_toc" id="toc" h_min=2 h_max=2 %}
         </nav>
     </aside>
+
     <div id="main" role="main" class="container">
       {{ content }}
+    </div>
+
+    <div class="page-content">
+      <div class="wrapper" id="DDD">
+        {% include github-comments.html %}
+      </div>
     </div>
 
     <div class="wrapper-footer">

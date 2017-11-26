@@ -49,6 +49,9 @@ url:
 # then add in the baseurl here, like this: "/repository-name"
 baseurl: ""
 
+# Set this to a github repository to be used to host comments.
+github_comments_repository: msayag
+
 #
 # !! You don't need to change any of the configuration flags below !!
 #
@@ -71,8 +74,8 @@ kramdown:
 
 # Set the Sass partials directory, as we're using @imports
 sass:
-#  style: :expanded
-  style: :compressed
+  style: :expanded
+#  style: :compressed
 
 # Use the following plug-ins
 gems:
