@@ -3,14 +3,16 @@ layout: default
 ---
 
 <article class="post">
-  <h1>{{ page.title }}</h1>
-  <div class="date">
-    {{ page.date | date: "%B %e, %Y" }}
-  </div>
+    <h1>{{ page.title }}</h1>
+    <div class="date">
+        {{ page.date | date: "%B %e, %Y" }}
+    </div>
 
-  <div class="entry">
-    {{ content }}
-  </div>
+    {% include toc.html html=content sanitize=true class="side_toc" id="toc" h_min=2 h_max=2 %}
 
-  {% include disqus.html %}
+    <div class="entry">
+        {{ content }}
+    </div>
+
+    {% include disqus.html %}
 </article>
