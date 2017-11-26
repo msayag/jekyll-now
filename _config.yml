@@ -50,7 +50,7 @@ url:
 baseurl: ""
 
 # Set this to a github repository to be used to host comments.
-github_comments_repository: msayag
+github_comments_repository: msayag/msayag.github.io-comments
 
 #
 # !! You don't need to change any of the configuration flags below !!
