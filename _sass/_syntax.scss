@@ -54,3 +54,7 @@ pre a:only-of-type::before {
 pre .rouge-code > pre {
   padding: 10px;
 }
+
+pre .rouge-table pre {
+  margin: 0;
+}
