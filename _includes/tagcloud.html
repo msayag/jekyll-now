@@ -7,9 +7,9 @@
 
 {% comment %} normalize {% endcomment %}
 {% assign sortedtemptags = temptags | split:' ' | sort | reverse %}
-{% assign maxtag = sortedtemptags[0] | split: '#' %}
+{% assign maxtag = sortedtemptags[0] %}
 maxtag{{maxtag}}
-{% assign max = maxtag[2] %}
+{% assign max = 2 %}
 max{{max}}
 {% assign min = 1 %}
 min{{min}}
