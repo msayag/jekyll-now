@@ -10,7 +10,7 @@
 {% assign tagitems = temptag | split: '#' %}
 {% assign tagname = tagitems[1] %}
 {% assign times = tagitems[2] %}
-{% assign level = 5 %}
+{% assign level = 3 | minus: 3 | times: 10 | divided_by: 2 %}
 <a href="/tag/{{ tagname }}" class="tag{{level}}"><code class="highligher-rouge">
     <nobr>{{ tagname }}</nobr>
 </code></a>
