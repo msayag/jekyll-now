@@ -6,7 +6,10 @@
 {% endcapture %}
 
 {% comment %} normalize {% endcomment %}
-{% assign max = 3 %}
+temptags{{temptags}},
+{% assign sortedtemptags = temptags | split:' ' | sort | reverse %}
+sortedtemptags{{sortedtemptags}},
+{% assign max = maxtag[2] %}
 max{{max}}
 {% assign min = 1 %}
 min{{min}}
