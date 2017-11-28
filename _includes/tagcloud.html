@@ -9,7 +9,8 @@
 {% assign sortedtemptags = temptags | split:' ' | sort | reverse %}
 {% assign maxtag = sortedtemptags[0] | split:'#' %}
 maxtag{{maxtag}}
-{% assign max = maxtag[2] %}
+maxtag[0]{{maxtag[0]}}
+{% assign max = 2 %}
 max{{max}}
 {% assign min = 1 %}
 min{{min}}
