@@ -5,12 +5,21 @@
 {% endfor %}
 {% endcapture %}
 
+{% comment %} normalize {% endcomment %}
+{% assign sortedtemptags = temptags | split:' ' | sort | reverse %}
+{% assign maxtag = sortedtemptags[0] | split: '#' %}
+{% assign max = 3 %}
+{% assign last = sortedtemptags.size | minus: 1 %}
+{% assign mintag = sortedtemptags[last] | split: '#' %}
+{% assign min = 1 %}
+{% assign range = max | minus: min %}
+
 {% assign tags = temptags | split:' ' %}
 {% for temptag in tags %}
 {% assign tagitems = temptag | split: '#' %}
 {% assign tagname = tagitems[1] %}
 {% assign times = tagitems[2] %}
-{% assign level = 3 | minus: 3 | times: 10 | divided_by: 2 %}
+{% assign level = times | minus: min | times: 10 | divided_by: range %}
 <a href="/tag/{{ tagname }}" class="tag{{level}}"><code class="highligher-rouge">
     <nobr>{{ tagname }}</nobr>
 </code></a>
