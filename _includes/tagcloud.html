@@ -1,0 +1,26 @@
+<h2>Tags</h2>
+{% capture temptags %}
+{% for tag in site.tags %}
+{{ tag[1].size | plus: 1000 }}#{{ tag[0] }}#{{ tag[1].size }}
+{% endfor %}
+{% endcapture %}
+
+{% comment %} normalize {% endcomment %}
+{% assign sortedtemptags = temptags | split:' ' | sort | reverse %}
+{% assign maxtag = sortedtemptags[0] | split: '#' %}
+{% assign max = maxtag[2] %}
+{% assign last = sortedtemptags.size | minus: 1 %}
+{% assign mintag = sortedtemptags[last] | split: '#' %}
+{% assign min = mintag[2] %}
+{% assign range = max | minus: min %}
+
+{% assign tags = temptags | split:' ' %}
+{% for temptag in tags %}
+{% assign tagitems = temptag | split: '#' %}
+{% assign tagname = tagitems[1] %}
+{% assign times = tagitems[2] %}
+{% assign level = times | minus: min | times: 10 | divided_by: range %}
+<a href="/tag/{{ tagname }}" class="tag{{level}}"><code class="highligher-rouge">
+    <nobr>{{ tagname }}</nobr>
+</code></a>
+{% endfor %}
