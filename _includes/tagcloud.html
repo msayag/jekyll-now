@@ -6,7 +6,9 @@
 {% endcapture %}
 
 {% comment %} normalize {% endcomment %}
-{% assign max = 3 %}
+{% assign sortedtemptags = temptags | split:' ' | sort | reverse %}
+{% assign maxtag = sortedtemptags[0] | split: '#' %}
+{% assign max = maxtag[2] %}
 max{{max}}
 {% assign min = 1 %}
 min{{min}}
@@ -18,7 +20,9 @@ range{{range}}
 {% assign tagitems = temptag | split: '#' %}
 {% assign tagname = tagitems[1] %}
 {% assign times = tagitems[2] %}
+times{{times}}
 {% assign level = times | minus: min | times: 10 | divided_by: range %}
+{{level}}
 <a href="/tag/{{ tagname }}" class="tag{{level}}"><code class="highligher-rouge">
     <nobr>{{ tagname }}</nobr>
 </code></a>
