@@ -9,10 +9,13 @@
 {% assign sortedtemptags = temptags | split:' ' | sort | reverse %}
 {% assign maxtag = sortedtemptags[0] | split: '#' %}
 {% assign max = 3 %}
+max{{max}}
 {% assign last = sortedtemptags.size | minus: 1 %}
 {% assign mintag = sortedtemptags[last] | split: '#' %}
 {% assign min = 1 %}
+min{{min}}
 {% assign range = max | minus: min %}
+range{{range}}
 
 {% assign tags = temptags | split:' ' %}
 {% for temptag in tags %}
