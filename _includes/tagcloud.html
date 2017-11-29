@@ -1,7 +1,7 @@
 <h2>Tags</h2>
 {% capture temptags %}
 {% for tag in site.tags %}
-{{ tag[1].size | plus: 1000 }}#{{ tag[0] }}#{{ tag[1].size }}
+    {{ tag[1].size | plus: 1000 }}#{{ tag[0] }}#{{ tag[1].size }}
 {% endfor %}
 {% endcapture %}
 
@@ -14,20 +14,16 @@
 {% assign min = mintag[2] %}
 {% assign range = max | minus: min %}
 {% if range == 0 %}
-{% assign range = 1 %}
+    {% assign range = 1 %}
 {% endif %}
-
-range{{range}}
 
 {% assign tags = temptags | split:' ' %}
 {% for temptag in tags %}
-{% assign tagitems = temptag | split: '#' %}
-{% assign tagname = tagitems[1] %}
-{% assign times = tagitems[2] %}
-times{{times}}
-{% assign level = times | minus: min | times: 10 | divided_by: range %}
-level{{level}}
-<a href="/tag/{{ tagname }}" class="tag{{level}}"><code class="highligher-rouge">
-    <nobr>{{ tagname }}</nobr>
-</code></a>
+    {% assign tagitems = temptag | split: '#' %}
+    {% assign tagname = tagitems[1] %}
+    {% assign times = tagitems[2] %}
+    {% assign level = times | minus: min | times: 10 | divided_by: range %}
+    <a href="/tag/{{ tagname }}" class="tag{{level}}"><code class="highligher-rouge">
+        <nobr>{{ tagname }}</nobr>
+    </code></a>
 {% endfor %}
