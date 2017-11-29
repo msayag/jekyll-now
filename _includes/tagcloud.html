@@ -21,7 +21,6 @@
     {% assign times = tagitems[2] %}
     {% if range > 0 %}
         {% assign level = times | minus: min | times: 10 | divided_by: range %}
-        {{times}}-{{min}}*{{times}}/{{range}}={{level}}
     {% else %}
         {% assign level = 5 %}
     {% endif %}
