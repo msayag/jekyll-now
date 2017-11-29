@@ -19,11 +19,13 @@
     {% assign tagitems = temptag | split: '#' %}
     {% assign tagname = tagitems[1] %}
     {% assign times = tagitems[2] %}
+{{range}}
     {% if range > 0 %}
-        {% assign level = times | minus: min | times: 10 | divided_by: range %}
+        true
     {% else %}
-        {% assign level = 5 %}
+        false
     {% endif %}
+{% assign level = 5 %}
     <a href="/tag/{{ tagname }}" class="tag{{level}}"><code class="highligher-rouge">
         <nobr>{{ tagname }}</nobr>
     </code></a>
