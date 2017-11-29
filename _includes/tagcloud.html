@@ -14,7 +14,10 @@ max{{max}}
 {% assign min = 1 %}
 min{{min}}
 {% assign range = max | minus: min %}
+{% if range == 0 %}
 {% assign range = 1 %}
+{% endif %}
+
 range{{range}}
 
 {% assign tags = temptags | split:' ' %}
