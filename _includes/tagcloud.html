@@ -23,9 +23,8 @@
     {% if range > 0 %}
         true
     {% else %}
-        false
+        {% assign level = 5 %}
     {% endif %}
-{% assign level = 5 %}
     <a href="/tag/{{ tagname }}" class="tag{{level}}"><code class="highligher-rouge">
         <nobr>{{ tagname }}</nobr>
     </code></a>
