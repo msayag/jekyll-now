@@ -7,12 +7,11 @@
 
 {% comment %} normalize {% endcomment %}
 {% assign sortedtemptags = temptags | split:' ' | sort | reverse %}
-{% assign maxtag = sortedtemptags[0] | split:'#' %}
-maxtag[2]{{maxtag[2]}}
+{% assign maxtag = sortedtemptags[0] | split: '#' %}
 {% assign max = maxtag[2] %}
-max{{max}}
-{% assign min = 1 %}
-min{{min}}
+{% assign last = sortedtemptags.size | minus: 1 %}
+{% assign mintag = sortedtemptags[last] | split: '#' %}
+{% assign min = mintag[2] %}
 {% assign range = max | minus: min %}
 {% if range == 0 %}
 {% assign range = 1 %}
