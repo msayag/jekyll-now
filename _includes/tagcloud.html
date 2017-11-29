@@ -21,7 +21,8 @@
     {% assign times = tagitems[2] %}
 {{range}}
     {% if range > 0 %}
-        true
+{{times}}-{{min}}*{{times}}/{{range}}={{level}}
+        {% assign level = 5 %}
     {% else %}
         {% assign level = 5 %}
     {% endif %}
