@@ -19,10 +19,9 @@
     {% assign tagitems = temptag | split: '#' %}
     {% assign tagname = tagitems[1] %}
     {% assign times = tagitems[2] %}
-{{range}}
     {% if range > 0 %}
-{{times}}-{{min}}*{{times}}/{{range}}={{level}}
-        {% assign level = 5 %}
+        {% assign level = times | minus: min | times: 10 | divided_by: range %}
+        {{times}}-{{min}}*{{times}}/{{range}}={{level}}
     {% else %}
         {% assign level = 5 %}
     {% endif %}
