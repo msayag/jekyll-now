@@ -13,16 +13,17 @@
 {% assign mintag = sortedtemptags[last] | split: '#' %}
 {% assign min = mintag[2] %}
 {% assign range = max | minus: min %}
-{% if range == 0 %}
-    {% assign range = 1 %}
-{% endif %}
 
 {% assign tags = temptags | split:' ' %}
 {% for temptag in tags %}
     {% assign tagitems = temptag | split: '#' %}
     {% assign tagname = tagitems[1] %}
     {% assign times = tagitems[2] %}
-    {% assign level = times | minus: min | times: 10 | divided_by: range %}
+    {% if range > 0 %}
+        {% assign level = times | minus: min | times: 10 | divided_by: range %}
+    {% else %}
+        {% assign level = 5 %}
+    {% endif %}
     <a href="/tag/{{ tagname }}" class="tag{{level}}"><code class="highligher-rouge">
         <nobr>{{ tagname }}</nobr>
     </code></a>
