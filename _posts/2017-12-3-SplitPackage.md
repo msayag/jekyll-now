@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Split Packages on Java 9 Modules
-tags: java-9 modules jpms
+tags: java9 modules jpms
 github_comments_issueid: 3
 repository: Split-Package
 excerpt: In this post I am going to describe the problem of split package on Java 9 Module system and propose solutions to 3 possible cases (Move, Upgrade and Unsplit).
