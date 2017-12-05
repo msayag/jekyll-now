@@ -51,6 +51,10 @@ h1 {
   }
 }
 
+article > h1 {
+  margin-bottom: 0;
+}
+
 h2 {
   font-size: 24px;
 }
