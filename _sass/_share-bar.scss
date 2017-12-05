@@ -26,6 +26,12 @@
   color: #ffffff;
 }
 
+.share-button span {
+  @include mobile {
+    display: none;
+  }
+}
+
 /* Facebook button */
 .fa-facebook-official {
   color: #3b5998;
