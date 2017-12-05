@@ -35,7 +35,7 @@ Unfortunately, the used version is 2.7, which is old and doesn't support module 
 
 One solution may be to upgrade the library to a newer version that do support the modules (log4j 2.10.0).
 
-![Log4J 2.10.0]({{ "/2017-12-3-SplitPackage/log4j-2.10.0.png" | absolute_url }})
+![Log4J 2.10.0]({{ "assets/2017-12-3-SplitPackage/log4j-2.10.0.png" | absolute_url }})
 
 ## Solution 3: Unsplit
 If such version can not be used, because of the project's limitation or if such a version does not exist, a more complicated solution might have to be applied.
