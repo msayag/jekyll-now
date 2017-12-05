@@ -15,9 +15,9 @@ You can read [here](http://blog.joda.org/2017/04/java-9-modules-jpms-basics.html
 One of the restrictions when working with JPMS is that a package can not be exported from more one module ([video](https://www.youtube.com/watch?v=gtcTftvj0d0&feature=youtu.be&t=16m26s)).  
 For example, if one module (dependency.api) contains the class _io.github.msayag.lib.Something_, another module (dependency.impl)can contain the class _io.github.msayag.lib.KindOfSomething_ because they are both in the package _io.github.msayag.lib_.  
 
-![Split Package](https://raw.githubusercontent.com/msayag/msayag.github.io/master/_posts/2017-12-3-SplitPackage/split_package_1.png)
+![Split Package]({{ "assets/2017-12-3-SplitPackage/split_package_1.png" | absolute_url }})
 
-![IntelliJ Error](https://raw.githubusercontent.com/msayag/msayag.github.io/master/_posts/2017-12-3-SplitPackage/split_package_2.png) 
+![IntelliJ Error]({{ "assets/2017-12-3-SplitPackage/split_package_2.png" | absolute_url }}) 
 
 ## Solution 1: Move
 The problematic modules are under your control
@@ -29,13 +29,13 @@ A package might be split between 2 libraries that are out of your control.
 For example, I have a project that uses log4j and thus require the libraries _log4j.api_ and _log4j.core.  
 Unfortunately, the used version is 2.7, which is old and doesn't support module system.  
 
-![Log4J 2.7 Conflict](https://raw.githubusercontent.com/msayag/msayag.github.io/master/_posts/2017-12-3-SplitPackage/log4j-2.7_1.png)
+![Log4J 2.7 Conflict]({{ "assets/2017-12-3-SplitPackage/log4j-2.7_1.png" | absolute_url }})
 
-![Log4J 2.7 Split Package](https://raw.githubusercontent.com/msayag/msayag.github.io/master/_posts/2017-12-3-SplitPackage/log4j-2.7_2.png)
+![Log4J 2.7 Split Package]({{ "assets/2017-12-3-SplitPackage/log4j-2.7_2.png" | absolute_url }})
 
 One solution may be to upgrade the library to a newer version that do support the modules (log4j 2.10.0).
 
-![Log4J 2.10.0](https://raw.githubusercontent.com/msayag/msayag.github.io/master/_posts/2017-12-3-SplitPackage/log4j-2.10.0.png)
+![Log4J 2.10.0]({{ "/2017-12-3-SplitPackage/log4j-2.10.0.png" | absolute_url }})
 
 ## Solution 3: Unsplit
 If such version can not be used, because of the project's limitation or if such a version does not exist, a more complicated solution might have to be applied.
