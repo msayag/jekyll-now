@@ -42,10 +42,10 @@ If such version can not be used, because of the project's limitation or if such 
 Since the problem is with classes from different jars, perhaps it can be worked around by merging the conflicting jars into a bigger one that contains the content of both.
 To do so, extract the 2 original jars to the same location and pack them back together as a new jar or module.
 
-```
+```sh
 mkdir log4j-bridge
 cd log4j-bridge
 jar -xvf /path/to/log4j-api-2.7.jar
 jar -xvf /path/to/log4j-core-2.7.jar
-jar -c -f log4j-bridge-2.7.jar *
+jar -cf log4j-bridge-2.7.jar *
 ```
